@@ -1,0 +1,11 @@
+C:\Users\m303\Desktop\114_1_C_Sharp\hi work\hi work\bin\Debug\hi work.exe.config
+C:\Users\m303\Desktop\114_1_C_Sharp\hi work\hi work\bin\Debug\hi work.exe
+C:\Users\m303\Desktop\114_1_C_Sharp\hi work\hi work\bin\Debug\hi work.pdb
+C:\Users\m303\Desktop\114_1_C_Sharp\hi work\hi work\obj\Debug\hi work.csproj.AssemblyReference.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\hi work\hi work\obj\Debug\hi_work.Form1.resources
+C:\Users\m303\Desktop\114_1_C_Sharp\hi work\hi work\obj\Debug\hi_work.Properties.Resources.resources
+C:\Users\m303\Desktop\114_1_C_Sharp\hi work\hi work\obj\Debug\hi work.csproj.GenerateResource.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\hi work\hi work\obj\Debug\hi work.csproj.CoreCompileInputs.cache
+C:\Users\m303\Desktop\114_1_C_Sharp\hi work\hi work\obj\Debug\hi work.exe
+C:\Users\m303\Desktop\114_1_C_Sharp\hi work\hi work\obj\Debug\hi work.pdb
+C:\Users\m303\Desktop\114_1_C_Sharp\hi work\hi work\obj\Debug\hi work.exe.config
