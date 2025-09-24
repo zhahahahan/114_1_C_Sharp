@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{4650D337-7F35-423C-8E58-E6FA563C4FE2}|Tutorial_2_2\\Tutorial_2_2.csproj|c:\\users\\m303\\desktop\\114_1_c_sharp\\114_09_17\\tutorial_2_2\\tutorial_2_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4650D337-7F35-423C-8E58-E6FA563C4FE2}|Tutorial_2_2\\Tutorial_2_2.csproj|solutionrelative:tutorial_2_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650D337-7F35-423C-8E58-E6FA563C4FE2}|Tutorial_2_2\\Tutorial_2_2.csproj|c:\\users\\m303\\desktop\\114_1_c_sharp\\114_09_17\\tutorial_2_2\\tutorial_2_2\\tutorial_2_2.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{4650D337-7F35-423C-8E58-E6FA563C4FE2}|Tutorial_2_2\\Tutorial_2_2.csproj|solutionrelative:tutorial_2_2\\tutorial_2_2.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,17 +22,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Tutorial_2_2",
+              "DocumentMoniker": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_09_17\\Tutorial_2_2\\Tutorial_2_2\\Tutorial_2_2.csproj",
+              "RelativeDocumentMoniker": "Tutorial_2_2\\Tutorial_2_2.csproj",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_09_17\\Tutorial_2_2\\Tutorial_2_2\\Tutorial_2_2.csproj",
+              "RelativeToolTip": "Tutorial_2_2\\Tutorial_2_2.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-24T02:33:58.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_09_17\\Tutorial_2_2\\Tutorial_2_2\\Form1.cs",
               "RelativeDocumentMoniker": "Tutorial_2_2\\Form1.cs",
-              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_09_17\\Tutorial_2_2\\Tutorial_2_2\\Form1.cs",
-              "RelativeToolTip": "Tutorial_2_2\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_09_17\\Tutorial_2_2\\Tutorial_2_2\\Form1.cs*",
+              "RelativeToolTip": "Tutorial_2_2\\Form1.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-17T04:41:23.827Z",
               "EditorCaption": ""
@@ -39,19 +59,11 @@
               "Title": "Form1.cs [\u8A2D\u8A08]",
               "DocumentMoniker": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_09_17\\Tutorial_2_2\\Tutorial_2_2\\Form1.cs",
               "RelativeDocumentMoniker": "Tutorial_2_2\\Form1.cs",
-              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_09_17\\Tutorial_2_2\\Tutorial_2_2\\Form1.cs [\u8A2D\u8A08]",
-              "RelativeToolTip": "Tutorial_2_2\\Form1.cs [\u8A2D\u8A08]",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\114_1_C_Sharp\\114_09_17\\Tutorial_2_2\\Tutorial_2_2\\Form1.cs [\u8A2D\u8A08]*",
+              "RelativeToolTip": "Tutorial_2_2\\Form1.cs [\u8A2D\u8A08]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-17T04:21:59.977Z",
               "EditorCaption": " [\u8A2D\u8A08]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
