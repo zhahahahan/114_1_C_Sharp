@@ -1,0 +1,199 @@
+﻿namespace WinFormsApp2
+{
+    partial class Form1
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
+        private System.Windows.Forms.Label lblComputerTitle;
+        private System.Windows.Forms.Label lblPlayerTitle;
+        private System.Windows.Forms.Panel panelComputer;
+        private System.Windows.Forms.Panel panelPlayer;
+        private System.Windows.Forms.Label lblComputerHand;
+        private System.Windows.Forms.Label lblPlayerHand;
+        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelButtons;
+        private System.Windows.Forms.Button btnRock;
+        private System.Windows.Forms.Button btnPaper;
+        private System.Windows.Forms.Button btnScissors;
+        private System.Windows.Forms.Button btnExit;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
+            this.lblComputerTitle = new System.Windows.Forms.Label();
+            this.lblPlayerTitle = new System.Windows.Forms.Label();
+            this.panelComputer = new System.Windows.Forms.Panel();
+            this.lblComputerHand = new System.Windows.Forms.Label();
+            this.panelPlayer = new System.Windows.Forms.Panel();
+            this.lblPlayerHand = new System.Windows.Forms.Label();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.tableLayoutPanelButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.btnRock = new System.Windows.Forms.Button();
+            this.btnPaper = new System.Windows.Forms.Button();
+            this.btnScissors = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // Form1
+            // 
+            this.ClientSize = new System.Drawing.Size(800, 520);
+            this.Text = "剪刀石頭布";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Font = new System.Drawing.Font("Microsoft JhengHei", 10F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            // 
+            // tableLayoutPanelMain
+            // 
+            this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelMain.ColumnCount = 3;
+            this.tableLayoutPanelMain.RowCount = 6;
+            this.tableLayoutPanelMain.Padding = new System.Windows.Forms.Padding(10);
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            // 
+            // lblComputerTitle
+            // 
+            this.lblComputerTitle.Text = "電腦出";
+            this.lblComputerTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblComputerTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblComputerTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 16F);
+            // 
+            // lblPlayerTitle
+            // 
+            this.lblPlayerTitle.Text = "玩家出";
+            this.lblPlayerTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPlayerTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPlayerTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 16F);
+            // 
+            // panelComputer
+            // 
+            this.panelComputer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelComputer.BackColor = System.Drawing.Color.BurlyWood;
+            this.panelComputer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            // 
+            // lblComputerHand
+            // 
+            this.lblComputerHand.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblComputerHand.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblComputerHand.Font = new System.Drawing.Font("Segoe UI Emoji", 48F);
+            this.lblComputerHand.Text = "👊";
+            this.panelComputer.Controls.Add(this.lblComputerHand);
+            // 
+            // panelPlayer
+            // 
+            this.panelPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPlayer.BackColor = System.Drawing.Color.BurlyWood;
+            this.panelPlayer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            // 
+            // lblPlayerHand
+            // 
+            this.lblPlayerHand.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPlayerHand.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPlayerHand.Font = new System.Drawing.Font("Segoe UI Emoji", 48F);
+            this.lblPlayerHand.Text = "✋";
+            this.panelPlayer.Controls.Add(this.lblPlayerHand);
+            // 
+            // lblResult
+            // 
+            this.lblResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblResult.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            this.lblResult.Text = "請出拳";
+            this.lblResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            // 
+            // tableLayoutPanelButtons
+            // 
+            this.tableLayoutPanelButtons.ColumnCount = 3;
+            this.tableLayoutPanelButtons.RowCount = 1;
+            this.tableLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.tableLayoutPanelButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.tableLayoutPanelButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
+            this.tableLayoutPanelButtons.Padding = new System.Windows.Forms.Padding(40, 10, 40, 10);
+            // 
+            // btnRock
+            // 
+            this.btnRock.Text = "石頭";
+            this.btnRock.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRock.Font = new System.Drawing.Font("Microsoft JhengHei", 18F);
+            this.btnRock.Click += new System.EventHandler(this.btnRock_Click);
+            // 
+            // btnPaper
+            // 
+            this.btnPaper.Text = "布";
+            this.btnPaper.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPaper.Font = new System.Drawing.Font("Microsoft JhengHei", 18F);
+            this.btnPaper.Click += new System.EventHandler(this.btnPaper_Click);
+            // 
+            // btnScissors
+            // 
+            this.btnScissors.Text = "剪刀";
+            this.btnScissors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnScissors.Font = new System.Drawing.Font("Microsoft JhengHei", 18F);
+            this.btnScissors.Click += new System.EventHandler(this.btnScissors_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Text = "結束遊戲";
+            this.btnExit.Font = new System.Drawing.Font("Microsoft JhengHei", 16F);
+            this.btnExit.Size = new System.Drawing.Size(220, 48);
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            // 
+            // assemble controls
+            // 
+            this.tableLayoutPanelButtons.Controls.Add(this.btnRock, 0, 0);
+            this.tableLayoutPanelButtons.Controls.Add(this.btnPaper, 1, 0);
+            this.tableLayoutPanelButtons.Controls.Add(this.btnScissors, 2, 0);
+
+            var exitHost = new System.Windows.Forms.Panel();
+            exitHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            var exitFlow = new System.Windows.Forms.FlowLayoutPanel();
+            exitFlow.Dock = System.Windows.Forms.DockStyle.Fill;
+            exitFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            exitFlow.WrapContents = false;
+            exitFlow.Controls.Add(this.btnExit);
+            exitHost.Controls.Add(exitFlow);
+
+            this.tableLayoutPanelMain.Controls.Add(this.lblComputerTitle, 0, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.lblPlayerTitle, 2, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.panelComputer, 0, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.panelPlayer, 2, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.lblResult, 0, 3);
+            this.tableLayoutPanelMain.SetColumnSpan(this.lblResult, 3);
+            this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelButtons, 0, 4);
+            this.tableLayoutPanelMain.SetColumnSpan(this.tableLayoutPanelButtons, 3);
+            this.tableLayoutPanelMain.Controls.Add(exitHost, 0, 5);
+            this.tableLayoutPanelMain.SetColumnSpan(exitHost, 3);
+
+            this.Controls.Add(this.tableLayoutPanelMain);
+
+            this.ResumeLayout(false);
+        }
+
+        #endregion
+    }
+}

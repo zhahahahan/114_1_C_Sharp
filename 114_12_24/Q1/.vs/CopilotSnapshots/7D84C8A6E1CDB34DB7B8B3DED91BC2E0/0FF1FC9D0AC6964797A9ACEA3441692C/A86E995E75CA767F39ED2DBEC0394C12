@@ -1,0 +1,95 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WinFormsApp2
+{
+    public partial class Form1 : Form
+    {
+        private readonly Random _rng = new Random();
+
+        private enum RPS { Rock = 0, Paper = 1, Scissors = 2 }
+
+        public Form1()
+        {
+            InitializeComponent();
+            // 初始畫面設定（確保字樣與手勢一致）
+            lblComputerHand.Text = "👊";
+            lblPlayerHand.Text = "✋";
+            lblResult.Text = "請出拳";
+        }
+
+        private void btnRock_Click(object sender, EventArgs e)
+        {
+            Play(RPS.Rock);
+        }
+
+        private void btnPaper_Click(object sender, EventArgs e)
+        {
+            Play(RPS.Paper);
+        }
+
+        private void btnScissors_Click(object sender, EventArgs e)
+        {
+            Play(RPS.Scissors);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Play(RPS player)
+        {
+            var computer = (RPS)_rng.Next(0, 3);
+            // 對應 emoji
+            lblPlayerHand.Text = RpsToEmoji(player);
+            lblComputerHand.Text = RpsToEmoji(computer);
+
+            // 判定: 0: rock,1:paper,2:scissors
+            if (player == computer)
+            {
+                lblResult.Text = "平手";
+                lblResult.ForeColor = Color.Black;
+            }
+            else if ((player == RPS.Rock && computer == RPS.Scissors)
+                  || (player == RPS.Paper && computer == RPS.Rock)
+                  || (player == RPS.Scissors && computer == RPS.Paper))
+            {
+                lblResult.Text = "玩家贏";
+                lblResult.ForeColor = Color.Green;
+            }
+            else
+            {
+                lblResult.Text = "電腦贏";
+                lblResult.ForeColor = Color.DarkRed;
+            }
+            // 可視化簡單提示：閃爍結果邊框
+            FlashResultBorder();
+        }
+
+        private string RpsToEmoji(RPS r)
+        {
+            return r switch
+            {
+                RPS.Rock => "👊",
+                RPS.Paper => "✋",
+                RPS.Scissors => "✌️",
+                _ => "❓"
+            };
+        }
+
+        private async void FlashResultBorder()
+        {
+            var original = lblResult.BorderStyle;
+            lblResult.BorderStyle = BorderStyle.Fixed3D;
+            await System.Threading.Tasks.Task.Delay(220);
+            lblResult.BorderStyle = original;
+        }
+
+        private void lblPlayerHand_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

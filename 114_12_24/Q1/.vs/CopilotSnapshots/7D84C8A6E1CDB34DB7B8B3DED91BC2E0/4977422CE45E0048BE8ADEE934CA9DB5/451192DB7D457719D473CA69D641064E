@@ -1,0 +1,171 @@
+﻿namespace WinFormsApp2
+{
+    partial class Form1
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        private System.Windows.Forms.Label lblComputerTitle;
+        private System.Windows.Forms.Label lblPlayerTitle;
+        private System.Windows.Forms.Panel panelComputer;
+        private System.Windows.Forms.Panel panelPlayer;
+        private System.Windows.Forms.PictureBox pbComputerHand;
+        private System.Windows.Forms.PictureBox pbPlayerHand;
+        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Button btnRock;
+        private System.Windows.Forms.Button btnPaper;
+        private System.Windows.Forms.Button btnScissors;
+        private System.Windows.Forms.Button btnExit;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            lblComputerTitle = new System.Windows.Forms.Label();
+            lblPlayerTitle = new System.Windows.Forms.Label();
+            panelComputer = new System.Windows.Forms.Panel();
+            pbComputerHand = new System.Windows.Forms.PictureBox();
+            panelPlayer = new System.Windows.Forms.Panel();
+            pbPlayerHand = new System.Windows.Forms.PictureBox();
+            lblResult = new System.Windows.Forms.Label();
+            btnRock = new System.Windows.Forms.Button();
+            btnPaper = new System.Windows.Forms.Button();
+            btnScissors = new System.Windows.Forms.Button();
+            btnExit = new System.Windows.Forms.Button();
+
+            SuspendLayout();
+            // 
+            // Form1
+            // 
+            ClientSize = new System.Drawing.Size(800, 520);
+            Text = "剪刀石頭布";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Font = new System.Drawing.Font("Microsoft JhengHei", 10F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+            // 
+            // lblComputerTitle
+            // 
+            lblComputerTitle.Text = "電腦出";
+            lblComputerTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblComputerTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 16F);
+            lblComputerTitle.Size = new System.Drawing.Size(220, 40);
+            lblComputerTitle.Location = new System.Drawing.Point(80, 18);
+
+            // 
+            // lblPlayerTitle
+            // 
+            lblPlayerTitle.Text = "玩家出";
+            lblPlayerTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblPlayerTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 16F);
+            lblPlayerTitle.Size = new System.Drawing.Size(220, 40);
+            lblPlayerTitle.Location = new System.Drawing.Point(500, 18);
+
+            // 
+            // panelComputer
+            // 
+            panelComputer.BackColor = System.Drawing.Color.BurlyWood;
+            panelComputer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelComputer.Location = new System.Drawing.Point(80, 70);
+            panelComputer.Size = new System.Drawing.Size(260, 100);
+            panelComputer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            // 
+            // pbComputerHand
+            // 
+            pbComputerHand.Dock = System.Windows.Forms.DockStyle.Fill;
+            pbComputerHand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            panelComputer.Controls.Add(pbComputerHand);
+
+            // 
+            // panelPlayer
+            // 
+            panelPlayer.BackColor = System.Drawing.Color.BurlyWood;
+            panelPlayer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelPlayer.Location = new System.Drawing.Point(460, 70);
+            panelPlayer.Size = new System.Drawing.Size(260, 100);
+            panelPlayer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            // 
+            // pbPlayerHand
+            // 
+            pbPlayerHand.Dock = System.Windows.Forms.DockStyle.Fill;
+            pbPlayerHand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            panelPlayer.Controls.Add(pbPlayerHand);
+
+            // 
+            // lblResult
+            // 
+            lblResult.Text = "請出拳";
+            lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblResult.Font = new System.Drawing.Font("Microsoft JhengHei", 22F);
+            lblResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            lblResult.Size = new System.Drawing.Size(520, 56);
+            lblResult.Location = new System.Drawing.Point(140, 190);
+            lblResult.Anchor = System.Windows.Forms.AnchorStyles.Top;
+
+            // 
+            // btnRock
+            // 
+            btnRock.Text = "石頭";
+            btnRock.Font = new System.Drawing.Font("Microsoft JhengHei", 18F);
+            btnRock.Size = new System.Drawing.Size(150, 60);
+            btnRock.Location = new System.Drawing.Point(110, 270);
+            btnRock.Click += new System.EventHandler(btnRock_Click);
+
+            // 
+            // btnPaper
+            // 
+            btnPaper.Text = "布";
+            btnPaper.Font = new System.Drawing.Font("Microsoft JhengHei", 18F);
+            btnPaper.Size = new System.Drawing.Size(150, 60);
+            btnPaper.Location = new System.Drawing.Point(325, 270);
+            btnPaper.Click += new System.EventHandler(btnPaper_Click);
+
+            // 
+            // btnScissors
+            // 
+            btnScissors.Text = "剪刀";
+            btnScissors.Font = new System.Drawing.Font("Microsoft JhengHei", 18F);
+            btnScissors.Size = new System.Drawing.Size(150, 60);
+            btnScissors.Location = new System.Drawing.Point(540, 270);
+            btnScissors.Click += new System.EventHandler(btnScissors_Click);
+
+            // 
+            // btnExit
+            // 
+            btnExit.Text = "結束遊戲";
+            btnExit.Font = new System.Drawing.Font("Microsoft JhengHei", 16F);
+            btnExit.Size = new System.Drawing.Size(220, 48);
+            btnExit.Location = new System.Drawing.Point(290, 360);
+            btnExit.Click += new System.EventHandler(btnExit_Click);
+
+            // 
+            // Add controls to form
+            // 
+            Controls.Add(lblComputerTitle);
+            Controls.Add(lblPlayerTitle);
+            Controls.Add(panelComputer);
+            Controls.Add(panelPlayer);
+            Controls.Add(lblResult);
+            Controls.Add(btnRock);
+            Controls.Add(btnPaper);
+            Controls.Add(btnScissors);
+            Controls.Add(btnExit);
+
+            ResumeLayout(false);
+        }
+
+        #endregion
+    }
+}

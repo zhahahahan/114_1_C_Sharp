@@ -1,0 +1,254 @@
+﻿using System;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+
+namespace WinFormsApp2
+{
+    public partial class Form1 : Form
+    {
+        private readonly Random _rng = new Random();
+
+        private enum RPS { Rock = 0, Paper = 1, Scissors = 2 }
+
+        // image resources (optional)
+        private Image imgRock;
+        private Image imgPaper;
+        private Image imgScissors;
+
+        // win counters
+        private int playerWins = 0;
+        private int computerWins = 0;
+        private int draws = 0;
+
+        // last choices
+        private RPS? lastPlayerChoice = null;
+        private RPS? lastComputerChoice = null;
+
+        public Form1()
+        {
+            InitializeComponent();
+
+            LoadImagesIfAvailable();
+
+            // 初始畫面設定（使用 PictureBox 顯示手勢）
+            var cbSize = GetPictureBoxSize(pbComputerHand);
+            var pbSize = GetPictureBoxSize(pbPlayerHand);
+
+            var imgC = GetImageForRps(RPS.Rock, cbSize);
+            var imgP = GetImageForRps(RPS.Paper, pbSize);
+
+            pbComputerHand.Image = imgC ?? EmojiToBitmap("👊", cbSize);
+            pbPlayerHand.Image = imgP ?? EmojiToBitmap("✋", pbSize);
+
+            lblResult.Text = "請出拳";
+        }
+
+        private void LoadImagesIfAvailable()
+        {
+            // look for images in application directory and an "images" subfolder
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string[] candidates = new[] { baseDir, Path.Combine(baseDir, "images") };
+
+            foreach (var dir in candidates)
+            {
+                try
+                {
+                    if (string.IsNullOrEmpty(dir) || !Directory.Exists(dir))
+                        continue;
+
+                    var rockPath = Path.Combine(dir, "rock.png");
+                    var paperPath = Path.Combine(dir, "paper.png");
+                    var scissorsPath = Path.Combine(dir, "scissors.png");
+
+                    if (File.Exists(rockPath) && imgRock == null)
+                    {
+                        imgRock = Image.FromFile(rockPath);
+                    }
+                    if (File.Exists(paperPath) && imgPaper == null)
+                    {
+                        imgPaper = Image.FromFile(paperPath);
+                    }
+                    if (File.Exists(scissorsPath) && imgScissors == null)
+                    {
+                        imgScissors = Image.FromFile(scissorsPath);
+                    }
+                }
+                catch
+                {
+                    // ignore load errors and keep nulls
+                }
+            }
+        }
+
+        private Image GetImageForRps(RPS r, Size targetSize)
+        {
+            Image src = r switch
+            {
+                RPS.Rock => imgRock,
+                RPS.Paper => imgPaper,
+                RPS.Scissors => imgScissors,
+                _ => null
+            };
+
+            if (src == null) return null;
+
+            // return a resized copy to fit the picturebox while preserving original
+            try
+            {
+                var bmp = new Bitmap(targetSize.Width > 0 ? targetSize.Width : src.Width, targetSize.Height > 0 ? targetSize.Height : src.Height);
+                using (var g = Graphics.FromImage(bmp))
+                {
+                    g.Clear(Color.Transparent);
+                    g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                    g.DrawImage(src, new Rectangle(0, 0, bmp.Width, bmp.Height));
+                }
+                return bmp;
+            }
+            catch
+            {
+                return src;
+            }
+        }
+
+        private Size GetPictureBoxSize(PictureBox pb)
+        {
+            if (pb.ClientSize.Width > 0 && pb.ClientSize.Height > 0)
+                return pb.ClientSize;
+            // fallback size
+            return new Size(200, 120);
+        }
+
+        private void btnRock_Click(object sender, EventArgs e)
+        {
+            Play(RPS.Rock);
+        }
+
+        private void btnPaper_Click(object sender, EventArgs e)
+        {
+            Play(RPS.Paper);
+        }
+
+        private void btnScissors_Click(object sender, EventArgs e)
+        {
+            Play(RPS.Scissors);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Play(RPS player)
+        {
+            // store player's choice
+            lastPlayerChoice = player;
+
+            // get computer choice via helper
+            var computer = getCompChoice();
+
+            // show images
+            showPlayerImage(player);
+            showComputerImage(computer);
+
+            // 判定並更新勝場計數與畫面
+            showWinner(player, computer);
+        }
+
+        // generate computer random choice and store to lastComputerChoice
+        private RPS getCompChoice()
+        {
+            var choice = (RPS)_rng.Next(0, 3);
+            lastComputerChoice = choice;
+            return choice;
+        }
+
+        // show corresponding image for computer choice
+        private void showComputerImage(RPS choice)
+        {
+            var img = GetImageForRps(choice, GetPictureBoxSize(pbComputerHand));
+            pbComputerHand.Image = img ?? EmojiToBitmap(RpsToEmoji(choice), GetPictureBoxSize(pbComputerHand));
+        }
+
+        // show corresponding image for player choice
+        private void showPlayerImage(RPS choice)
+        {
+            var img = GetImageForRps(choice, GetPictureBoxSize(pbPlayerHand));
+            pbPlayerHand.Image = img ?? EmojiToBitmap(RpsToEmoji(choice), GetPictureBoxSize(pbPlayerHand));
+        }
+
+        // compare choices, update counters and display result
+        private void showWinner(RPS player, RPS computer)
+        {
+            if (player == computer)
+            {
+                draws++;
+                lblResult.Text = $"平手 — 玩家:{playerWins} 電腦:{computerWins} 平手:{draws}";
+                lblResult.ForeColor = Color.Black;
+            }
+            else if ((player == RPS.Rock && computer == RPS.Scissors)
+                  || (player == RPS.Paper && computer == RPS.Rock)
+                  || (player == RPS.Scissors && computer == RPS.Paper))
+            {
+                playerWins++;
+                lblResult.Text = $"玩家贏 — 玩家:{playerWins} 電腦:{computerWins} 平手:{draws}";
+                lblResult.ForeColor = Color.Green;
+            }
+            else
+            {
+                computerWins++;
+                lblResult.Text = $"電腦贏 — 玩家:{playerWins} 電腦:{computerWins} 平手:{draws}";
+                lblResult.ForeColor = Color.DarkRed;
+            }
+
+            FlashResultBorder();
+        }
+
+        private string RpsToEmoji(RPS r)
+        {
+            return r switch
+            {
+                RPS.Rock => "👊",
+                RPS.Paper => "✋",
+                RPS.Scissors => "✌️",
+                _ => "❓"
+            };
+        }
+
+        private Image EmojiToBitmap(string emoji, Size size)
+        {
+            if (size.Width <= 0 || size.Height <= 0)
+                size = new Size(200, 120);
+
+            var bmp = new Bitmap(size.Width, size.Height);
+            using (var g = Graphics.FromImage(bmp))
+            {
+                g.Clear(SystemColors.Control);
+                g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+
+                // Choose a font size that fits the box
+                float fontSize = Math.Min(size.Height, size.Width) * 0.8f;
+                using (var font = new Font("Segoe UI Emoji", fontSize, FontStyle.Regular, GraphicsUnit.Pixel))
+                using (var brush = new SolidBrush(Color.Black))
+                using (var sf = new StringFormat() { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                {
+                    g.DrawString(emoji, font, brush, new RectangleF(0, 0, size.Width, size.Height), sf);
+                }
+            }
+            return bmp;
+        }
+
+        private async void FlashResultBorder()
+        {
+            var original = lblResult.BorderStyle;
+            lblResult.BorderStyle = BorderStyle.Fixed3D;
+            await System.Threading.Tasks.Task.Delay(220);
+            lblResult.BorderStyle = original;
+        }
+
+        private void lblPlayerHand_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

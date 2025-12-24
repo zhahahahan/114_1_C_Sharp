@@ -1,0 +1,194 @@
+﻿namespace WinFormsApp2
+{
+    partial class Form1
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        private System.Windows.Forms.Label lblComputerTitle;
+        private System.Windows.Forms.Label lblPlayerTitle;
+        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Button btnRock;
+        private System.Windows.Forms.Button btnPaper;
+        private System.Windows.Forms.Button btnScissors;
+        private System.Windows.Forms.Button btnExit;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        private void InitializeComponent()
+        {
+            lblComputerTitle = new Label();
+            lblPlayerTitle = new Label();
+            lblResult = new Label();
+            btnRock = new Button();
+            btnPaper = new Button();
+            btnScissors = new Button();
+            btnExit = new Button();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            SuspendLayout();
+            // 
+            // lblComputerTitle
+            // 
+            lblComputerTitle.Font = new Font("微軟正黑體", 16F);
+            lblComputerTitle.Location = new Point(80, 18);
+            lblComputerTitle.Name = "lblComputerTitle";
+            lblComputerTitle.Size = new Size(220, 40);
+            lblComputerTitle.TabIndex = 0;
+            lblComputerTitle.Text = "電腦出";
+            lblComputerTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblPlayerTitle
+            // 
+            lblPlayerTitle.Font = new Font("微軟正黑體", 16F);
+            lblPlayerTitle.Location = new Point(500, 18);
+            lblPlayerTitle.Name = "lblPlayerTitle";
+            lblPlayerTitle.Size = new Size(220, 40);
+            lblPlayerTitle.TabIndex = 1;
+            lblPlayerTitle.Text = "玩家出";
+            lblPlayerTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblResult
+            // 
+            lblResult.Anchor = AnchorStyles.Top;
+            lblResult.BorderStyle = BorderStyle.FixedSingle;
+            lblResult.Font = new Font("微軟正黑體", 22F);
+            lblResult.Location = new Point(141, 250);
+            lblResult.Name = "lblResult";
+            lblResult.Size = new Size(520, 56);
+            lblResult.TabIndex = 4;
+            lblResult.Text = "請出拳";
+            lblResult.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnRock
+            // 
+            btnRock.Font = new Font("微軟正黑體", 18F);
+            btnRock.Location = new Point(108, 324);
+            btnRock.Name = "btnRock";
+            btnRock.Size = new Size(150, 60);
+            btnRock.TabIndex = 5;
+            btnRock.Text = "石頭";
+            btnRock.Click += btnRock_Click;
+            // 
+            // btnPaper
+            // 
+            btnPaper.Font = new Font("微軟正黑體", 18F);
+            btnPaper.Location = new Point(330, 324);
+            btnPaper.Name = "btnPaper";
+            btnPaper.Size = new Size(150, 60);
+            btnPaper.TabIndex = 6;
+            btnPaper.Text = "布";
+            btnPaper.Click += btnPaper_Click;
+            // 
+            // btnScissors
+            // 
+            btnScissors.Font = new Font("微軟正黑體", 18F);
+            btnScissors.Location = new Point(540, 324);
+            btnScissors.Name = "btnScissors";
+            btnScissors.Size = new Size(150, 60);
+            btnScissors.TabIndex = 7;
+            btnScissors.Text = "剪刀";
+            btnScissors.Click += btnScissors_Click;
+            // 
+            // btnExit
+            // 
+            btnExit.Font = new Font("微軟正黑體", 16F);
+            btnExit.Location = new Point(294, 409);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(220, 48);
+            btnExit.TabIndex = 8;
+            btnExit.Text = "結束遊戲";
+            btnExit.Click += btnExit_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.paper_player;
+            pictureBox1.Location = new Point(468, 90);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(247, 141);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.paper_computer;
+            pictureBox2.Location = new Point(92, 90);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(247, 141);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.paper_computer;
+            pictureBox3.Location = new Point(277, 190);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(247, 141);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 11;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.paper_computer;
+            pictureBox4.Location = new Point(92, 90);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(247, 141);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 12;
+            pictureBox4.TabStop = false;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(12F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 520);
+            Controls.Add(pictureBox4);
+            Controls.Add(pictureBox3);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
+            Controls.Add(lblComputerTitle);
+            Controls.Add(lblPlayerTitle);
+            Controls.Add(lblResult);
+            Controls.Add(btnRock);
+            Controls.Add(btnPaper);
+            Controls.Add(btnScissors);
+            Controls.Add(btnExit);
+            Font = new Font("微軟正黑體", 10F);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "剪刀石頭布";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
+    }
+}
